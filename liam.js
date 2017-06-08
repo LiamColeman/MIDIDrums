@@ -44,19 +44,32 @@ document.addEventListener('keydown', (event) => {
 
     switch (keyCode) {
         case 'ArrowLeft':
-            play(instrument.Kick);
-            break;
-        case 'ArrowRight':
-            play(instrument.Snare);
+            play(instrument.Tom1);
             break;
         case 'ArrowUp':
+            play(instrument.Tom2);
+            break;
+        case 'ArrowRight':
             play(instrument.Tom3);
             break;
         case 'ArrowDown':
-            play(instrument.Tom1);
+            play(instrument.Snare);
             break;
         case 'Space':
-            play(instrument.Tom2);
+            play(instrument.Kick);
             break;
     }
 }, false);
+
+// modify the UI
+title.innerText = "LPC Drum Machine 1.0"
+title.style.fontSize = "2em";
+// dynamic style hacking, probably should patch css
+pad.style.visibility = "hidden";
+pad.style.maxHeight = "0px";
+tools.style.visibility = "hidden";
+io.style.visibility = "hidden";
+swing_container.style.visibility = "hidden";
+tempo_container.style.visibility = "hidden";
+hihat_container.style.visibility = "hidden";
+hihat_container.style.maxWidth = "0px";
